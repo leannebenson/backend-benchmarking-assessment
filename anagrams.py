@@ -16,34 +16,15 @@ import sys
 
 
 def alphabetize(string):
-    """Returns alphabetized version of the string."""
     return ''.join(sorted(string.lower()))
 
 
 def find_anagrams(words):
-    """
-    Returns a dictionary with keys that are alphabetized words and values
-    that are all words that, when alphabetized, match the key.
-    Example:
-    {'dgo': ['dog'], 'act': ['cat', 'act']}
-    """
-    #initialized all the keys first
-    #set default to make values for keys
-    # made separate thing with all keys alphabetized first
-    # then run the for loops again but instead of running alpebetize but compare it
-    #if alepbetize word was in dictionary then append value to the key
-    #they want values to be an array of stuff... used depend()
-    #make dictionary comprehension
-    # 
     anagrams = {alphabetize(word):[] for word in words}
 
     for word in words:
         if alphabetize(word) in anagrams:
             anagrams[alphabetize(word)].append(word)
-    #     alphabetize(word): [
-    #         w for w in words
-    #         if alphabetize(w) == alphabetize(word)]
-    #     for word in words}
     return anagrams
 
 
